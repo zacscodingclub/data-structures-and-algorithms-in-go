@@ -75,6 +75,7 @@ func (a *Array) Find(key int) bool {
 	}
 }
 
+// Delete removes an element and returns true if it was found
 func (a *Array) Delete(key int) bool {
 	var j int
 	for j = 0; j < a.Size(); j++ {
@@ -94,12 +95,14 @@ func (a *Array) Delete(key int) bool {
 	}
 }
 
+// Display prints out each value on a new line
 func (a *Array) Display() {
 	for i := 0; i < a.Size(); i++ {
 		fmt.Printf("%v\n", a.values[i])
 	}
 }
 
+// Size is a getter for length attribute
 func (a *Array) Size() int {
 	return a.length
 }
