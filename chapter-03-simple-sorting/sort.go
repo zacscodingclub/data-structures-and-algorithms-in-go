@@ -3,17 +3,17 @@ package main
 import "fmt"
 
 type Array struct {
-	items []int
+	items []int16
 }
 
 func (a *Array) Display() {
 	for i := 0; i < len(a.items); i++ {
-		if a.items[i] != 0 {
-			fmt.Printf("%v\n", a.items[i])
-		}
+		fmt.Printf("%v\n", a.items[i])
 	}
 }
 
+// may be more performant to write this in-line(?)
+// might be a Java only thing
 func (a *Array) swap(one, two int) {
 	tmp := a.items[one]
 	a.items[one] = a.items[two]
@@ -30,34 +30,51 @@ func (a *Array) BubbleSort() {
 	}
 }
 
-func (a *Array) InsertionSort() {
-	for i := 1; i < len(a.items); i++ {
-		k := a.items[i]
-		j := i - 1
-		for j >= 0 && a.items[j] > k {
-			a.items[j+1] = a.items[j]
-			j--
+func (a *Array) SelectionSort() {
+	for out := 0; out < len(a.items)-1; out++ {
+		min := out
+
+		for in := out + 1; in < len(a.items); in++ {
+			if a.items[in] < a.items[min] {
+				min = in
+			}
 		}
-		a.items[j+1] = k
+
+		a.swap(out, min)
+	}
+}
+
+func (a *Array) InsertionSort() {
+	for out := 1; out < len(a.items); out++ {
+		tmp := a.items[out]
+		in := out
+
+		for in > 0 && a.items[in-1] >= tmp {
+			a.items[in] = a.items[in-1]
+			in--
+		}
+		a.items[in] = tmp
 	}
 }
 
 func InsertionSortRun() {
-	i := make([]int, 7, 7)
+	i := []int16{77, 99, 11, 13, 44, 12, 12, 55, 00, 77}
 	a := Array{items: i}
 
-	a.items = append(a.items, 77)
-	a.items = append(a.items, 99)
-	a.items = append(a.items, 11)
-	a.items = append(a.items, 13)
-	a.items = append(a.items, 44)
-	a.items = append(a.items, 12)
-	a.items = append(a.items, 12)
-	a.items = append(a.items, 55)
-	a.items = append(a.items, 77)
 	a.Display()
 
 	a.InsertionSort()
+	fmt.Println("after")
+	a.Display()
+}
+
+func SelectionSortRun() {
+	i := []int16{77, 99, 11, 13, 44, 12, 12, 55, 00, 77}
+	a := Array{items: i}
+
+	a.Display()
+
+	a.SelectionSort()
 	fmt.Println("after")
 	a.Display()
 }
