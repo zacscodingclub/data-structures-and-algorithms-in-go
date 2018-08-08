@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 type Array struct {
-	items []int16
+	items []int
 }
 
 func (a *Array) Display() {
@@ -57,8 +61,15 @@ func (a *Array) InsertionSort() {
 	}
 }
 
+// Projects 3.2
+func (a *Array) Median() int {
+	a.InsertionSort()
+	half := len(a.items) / 2
+	return a.items[half-1]
+}
+
 func InsertionSortRun() {
-	i := []int16{77, 99, 11, 13, 44, 12, 12, 55, 00, 77}
+	i := []int{77, 99, 11, 13, 44, 12, 12, 55, 00, 77}
 	a := Array{items: i}
 
 	a.Display()
@@ -69,7 +80,7 @@ func InsertionSortRun() {
 }
 
 func SelectionSortRun() {
-	i := []int16{77, 99, 11, 13, 44, 12, 12, 55, 00, 77}
+	i := []int{77, 99, 11, 13, 44, 12, 12, 55, 00, 77}
 	a := Array{items: i}
 
 	a.Display()
@@ -77,4 +88,126 @@ func SelectionSortRun() {
 	a.SelectionSort()
 	fmt.Println("after")
 	a.Display()
+}
+
+func random(max int) int {
+	return rand.Intn(max)
+}
+
+// Experiment 1
+func TenThousandSort() {
+	var a []int
+	for i := 0; i < 10000; i++ {
+		a = append(a, random(10000))
+	}
+
+	b := Array{items: a}
+	c := Array{items: a}
+	d := Array{items: a}
+
+	bNow := time.Now()
+	b.BubbleSort()
+	bDur := time.Since(bNow)
+	fmt.Printf("BubbleSort: %v\n", bDur)
+
+	cNow := time.Now()
+	c.InsertionSort()
+	cDur := time.Since(cNow)
+	fmt.Printf("InsertionSort: %v\n", cDur)
+
+	dNow := time.Now()
+	d.SelectionSort()
+	dDur := time.Since(dNow)
+	fmt.Printf("SelectionSort: %v\n", dDur)
+}
+
+// Experiment 1
+// BubbleSort: 19.644929445s
+// InsertionSort: 590.368µs
+// SelectionSort: 6.201012026s
+func HundredThousandSort() {
+	var a []int
+	for i := 0; i < 100000; i++ {
+		a = append(a, random(100000))
+	}
+
+	b := Array{items: a}
+	c := Array{items: a}
+	d := Array{items: a}
+
+	bNow := time.Now()
+	b.BubbleSort()
+	bDur := time.Since(bNow)
+	fmt.Printf("BubbleSort: %v\n", bDur)
+
+	cNow := time.Now()
+	c.InsertionSort()
+	cDur := time.Since(cNow)
+	fmt.Printf("InsertionSort: %v\n", cDur)
+
+	dNow := time.Now()
+	d.SelectionSort()
+	dDur := time.Since(dNow)
+	fmt.Printf("SelectionSort: %v\n", dDur)
+}
+
+// Experiment 2
+// BubbleSort: 11.882628593s
+// InsertionSort: 205.563µs
+// SelectionSort: 6.156577306s
+func ReverseHundredThousandSort() {
+	var a []int
+	for i := 100000; i >= 0; i-- {
+		a = append(a, i)
+	}
+
+	b := Array{items: a}
+	c := Array{items: a}
+	d := Array{items: a}
+
+	bNow := time.Now()
+	b.BubbleSort()
+	bDur := time.Since(bNow)
+	fmt.Printf("BubbleSort: %v\n", bDur)
+
+	cNow := time.Now()
+	c.InsertionSort()
+	cDur := time.Since(cNow)
+	fmt.Printf("InsertionSort: %v\n", cDur)
+
+	dNow := time.Now()
+	d.SelectionSort()
+	dDur := time.Since(dNow)
+	fmt.Printf("SelectionSort: %v\n", dDur)
+}
+
+// SortedHundredThousandSort
+// Experiment 3
+// BubbleSort: 4.51892939s
+// InsertionSort: 196.94µs
+// SelectionSort: 6.198048522s
+func SortedHundredThousandSort() {
+	var a []int
+	for i := 0; i <= 100000; i++ {
+		a = append(a, i)
+	}
+
+	b := Array{items: a}
+	c := Array{items: a}
+	d := Array{items: a}
+
+	bNow := time.Now()
+	b.BubbleSort()
+	bDur := time.Since(bNow)
+	fmt.Printf("BubbleSort: %v\n", bDur)
+
+	cNow := time.Now()
+	c.InsertionSort()
+	cDur := time.Since(cNow)
+	fmt.Printf("InsertionSort: %v\n", cDur)
+
+	dNow := time.Now()
+	d.SelectionSort()
+	dDur := time.Since(dNow)
+	fmt.Printf("SelectionSort: %v\n", dDur)
 }
