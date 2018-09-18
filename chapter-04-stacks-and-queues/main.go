@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	CheckBrackets()
+	RunQueueExample()
 }
 
 func getInput(s string) []rune {

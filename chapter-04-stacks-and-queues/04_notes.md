@@ -4,6 +4,7 @@ These are different types of structures that excell at being used as programmer 
 
 ## Stack
 
+Last in, first out
 Stacks allow access to only the last item inserted. Most microprocessors use a stack-based architecture. When a method is called, its return address and arguments are pushed onto a stack, and when it returns, they're popped off.
 
 - Postal Analogy
@@ -17,5 +18,13 @@ Stacks allow access to only the last item inserted. Most microprocessors use a s
 3. `peek`
 
 ## Queue
+
+First in, first out
+Mimics real life experiences of people waiting in line, airplanes waiting to take off, or data packets waiting to be transimitted over the internet.
+
+### Actions
+
+1. `insert` (put, add, enque)
+2. `remove` (delete, get, deque)
 
 ## Priority Queue
