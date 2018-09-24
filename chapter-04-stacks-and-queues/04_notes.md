@@ -22,9 +22,19 @@ Stacks allow access to only the last item inserted. Most microprocessors use a s
 First in, first out
 Mimics real life experiences of people waiting in line, airplanes waiting to take off, or data packets waiting to be transimitted over the internet.
 
+### Deqeue
+
+Double-ended queue where you can insert/remove from either side. More versatile data structure than stack or queue and is sometimes used in container class libraries to serve both purposes. However it is not used as often as stacks and queues.
+
 ### Actions
 
 1. `insert` (put, add, enque)
 2. `remove` (delete, get, deque)
 
 ## Priority Queue
+
+More specialized data structure than stack or queue. Like an ordinary queue, it has a front and a rear, and items are removed from the front. However, items are ordered by key-value so that th eitem with the lowest key (or possibly highest key) is always at the front. Items are inserted into the proper position to maintain the order. Typically implemented as a heap to provide quick insertion.
+
+### Mail Sorting Analogy
+
+Each time you receive a piece of mail, you file it into a pile of pending letters according to it's urgency. More important/urgent letters on top. When you have time to take care of your mail, you start at the top and pop off each element.
