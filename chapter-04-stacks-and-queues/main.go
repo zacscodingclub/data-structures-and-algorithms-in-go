@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	RunPriorityQueueExample()
+	RunExpressionExample()
 }
 
 func getInput(s string) []rune {

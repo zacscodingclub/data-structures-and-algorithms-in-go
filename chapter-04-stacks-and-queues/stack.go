@@ -19,12 +19,12 @@ func NewStack(m int) *Stack {
 }
 
 func (s *Stack) Push(i int) {
-	s.top += 1
+	s.top++
 	s.items[s.top] = i
 }
 
 func (s *Stack) Pop() int {
-	s.top -= 1
+	s.top--
 	return s.items[s.top+1]
 }
 
@@ -34,6 +34,10 @@ func (s *Stack) Peek() int {
 
 func (s *Stack) IsEmpty() bool {
 	return s.top == 0
+}
+
+func (s *Stack) Size() int {
+	return s.top + 1
 }
 
 func (s *Stack) IsFull() bool {
