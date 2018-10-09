@@ -38,3 +38,21 @@ More specialized data structure than stack or queue. Like an ordinary queue, it 
 ### Mail Sorting Analogy
 
 Each time you receive a piece of mail, you file it into a pile of pending letters according to it's urgency. More important/urgent letters on top. When you have time to take care of your mail, you start at the top and pop off each element.
+
+## Questions
+
+1. 10
+2. ~~c~~ b
+3. Last In, First Out; First In, First Out
+4. false
+5. ~~c~~ b
+6. ~~higher to lower~~ it doesn't move
+7. 45
+8. false
+9. c
+10. N
+11. c
+12. true
+13. ~~c~~ b
+14. yes
+15. a
