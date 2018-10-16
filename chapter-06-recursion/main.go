@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	RunTowers()
+	RunRecursiveMergeSort()
 }
 
 // (n^2 + n)/2

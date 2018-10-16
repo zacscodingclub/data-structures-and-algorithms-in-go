@@ -11,3 +11,8 @@ Programming technique in which a method calls itself. It is often not inherently
 ## Divide and Conquer Algorithms
 
 Separate your problem into two separate problems and solve them independently. The solution to each smaller problem is the same: divide it into two even smaller problems and solve them. Continue this process until you get to the base case, which can be solved easily with no further division into halves.
+
+## Mergesort
+
+- n log(n)
+- requires an additional array in memory, equal in size to the one being sorted
