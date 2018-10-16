@@ -3,9 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	a := NewAnagram([]byte("cats"))
-	a.doAnagram(a.size)
-
+	RunTowers()
 }
 
 // (n^2 + n)/2
