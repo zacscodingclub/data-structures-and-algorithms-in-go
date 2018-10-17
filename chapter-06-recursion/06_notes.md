@@ -14,5 +14,13 @@ Separate your problem into two separate problems and solve them independently. T
 
 ## Mergesort
 
-- n log(n)
+- N\*log(N)
 - requires an additional array in memory, equal in size to the one being sorted
+- Number of copies is N\*log2(N)
+- Number of comparisons is always somewhat less than the number of copies (Max = N-1, Min = N/2)
+
+## Elminiating Recursion
+
+In many cases, removing recursion allows you to implement more effecient methods. However, many divide and conquer algorithms work very well in recursive routines.
+
+While recursion may be easy to conceptualize, it is often inefficient. In these cases we can transform the recursive method into a non-recursive approach.
