@@ -24,3 +24,21 @@ Separate your problem into two separate problems and solve them independently. T
 In many cases, removing recursion allows you to implement more effecient methods. However, many divide and conquer algorithms work very well in recursive routines.
 
 While recursion may be easy to conceptualize, it is often inefficient. In these cases we can transform the recursive method into a non-recursive approach.
+
+## Questions
+
+1. 10
+2. ~a~
+3. ~3~
+4. ~55~
+5. false
+6. "ed"
+7. b
+8. c
+9. divide and conquer
+10. upper
+11. topN
+12. c
+13. b
+14. b
+15. stack

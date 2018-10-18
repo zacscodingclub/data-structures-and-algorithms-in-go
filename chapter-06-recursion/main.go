@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	combinations(5, 3)
+	t := triangle(10)
+	fmt.Println(t)
 }
 
 func pow(base, exponent int) int {
