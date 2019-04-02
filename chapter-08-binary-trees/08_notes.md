@@ -69,3 +69,21 @@ Most complicated common operation requried for binary search trees.
 ## Complete Tree
 
 ## The Huffman Code
+
+## Questions
+
+1. O(log n)
+2. b
+3. true
+4. 5
+5. c
+6. node and tree
+7. a
+8. c
+9. finding
+10. A, ~~right child~~
+11. d
+12. 2n + 1
+13. false
+14. compress
+15. c
